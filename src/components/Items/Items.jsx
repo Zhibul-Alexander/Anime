@@ -20,12 +20,12 @@ export function Items() {
   }, [])
 
   return (
-    <div>
+    <div className={styles.content}>
       {isItemsLoading && <Loader />}
       {isItemsError && <span>Повторите запрос позже</span>}
       {isItemsLoaded && (
             items.map(({title, mal_id, images, title_synonyms}) => (
-              <div >
+              <div>
                 <div key={mal_id} className={styles.card}>
                   <div className={styles.cardCircle}>
                     <h2 className={styles.cardTitle}>{title}</h2>

@@ -12,7 +12,7 @@ export function App() {
       <Header />
       <div className={styles.wrapper}>
         <Routes>
-          <Route path="/" element={<Items />}/>
+          <Route path="/" element={<Items/>}/>
         </Routes>
         <Routes>
           <Route path="/anime/:id" element={<Item />}/>
