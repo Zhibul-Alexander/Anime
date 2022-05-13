@@ -23,6 +23,9 @@ body {
     font-family: "Poppins", sans-serif;
     text-align: center;
 }
+.content {
+    display: flex;
+}
 
 .container:hover .card {
     filter: blur(20px);
