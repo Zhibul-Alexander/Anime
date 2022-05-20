@@ -1,6 +1,6 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom"
-import { Header } from "./header";
+import { Header } from "./Header";
 import { Item } from "./Item";
 import styles from "./Items/styles.module.css";
 import { Items } from "./Items";

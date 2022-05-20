@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {ItemsAC} from "../../store"
 import { ItemsSelectors } from "../../store";
@@ -31,7 +31,7 @@ export function Items() {
                     <h2 className={styles.cardTitle}>{title}</h2>
                   </div>
                   <div className={styles.cardContent}>
-                    <p class={styles.cardText}>Title_synonyms: {title_synonyms}</p>
+                    <p class={styles.cardText}>Title: {title_synonyms}</p>
                     <img src={images.jpg.image_url} className={styles.cardImages} alt="" />
                     <Link to={`anime/${mal_id}`} className={styles.cardLink} >Read more</Link>
                   </div>
