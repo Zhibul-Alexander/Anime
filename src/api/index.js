@@ -1,1 +1,1 @@
-export { getItems, getItem } from "./sw";
+export { getItems, getItem, getSearch } from "./sw";
