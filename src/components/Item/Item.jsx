@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {getItem} from "../../api"
+import {getItem} from "../../api";
+import styles from "./styles.module.css";
 
 export const Item = () => {
     const {id} = useParams()

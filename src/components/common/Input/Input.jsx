@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import {debounce} from "lodash";
 import {getSearch} from "../../../api/index"
@@ -24,11 +24,14 @@ const Input = ({value, onChange, options = [], onOptionClick}) => {
 }
 
 export const InputOriginal = () => {
-    const getAnimeDebounced = debounce(getSearch, 1500) 
 
     const [value, setValue] = useState("")
     const [options, setOptions] = useState([])
     const navigate = useNavigate()
+
+    const getSearchValue = getSearch((e) => {e})
+    const getAnimeDebounced = useCallback(debounce(getSearchValue, 1500), [])
+    
 
     useEffect(() => {
     if (value.length > 2) {
@@ -46,3 +49,14 @@ export const InputOriginal = () => {
         <Input value={value} onChange={setValue} options={options} onOptionClick={onOptionClick} />
     )
 }
+
+
+// const fetchAnimeDebounced = useDebounce((target, search) => { 
+//     getAnimeSearch(target, search).then((r) => 
+//       setAnimeData(r.data.slice(0, 10)) 
+//     ); 
+//   }, 1500); 
+ 
+//   useEffect(() => { 
+//     fetchAnimeDebounced(target, search); 
+//   }, [value]);
